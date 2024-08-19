@@ -8,7 +8,7 @@ function App() {
 
   const date = new Date();
   const day = date.getDate();
-  const month = date.getMonth() + 1; // +1 because getMonth() returns 0-11
+  const month = date.getMonth() + 1;
   const year = date.getFullYear();
 
   const fetchData = async () => {
