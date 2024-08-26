@@ -1,84 +1,83 @@
 .container {
-    font-family: "Roboto", sans-serif;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0B0D0F;
-
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b0d0f;
 }
 
 .weatherCard {
-    padding: 3rem;
-    min-width: 40%;
-    height: 60vh;
-    background-color: #1F2025;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-    border-radius: 2.5rem;
-    z-index: 1;
-    justify-content: center;
+  padding: 3rem;
+  min-width: 40%;
+  height: 60vh;
+  background-color: #1f2025;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  border-radius: 2.5rem;
+  z-index: 1;
+  justify-content: center;
 }
 
-.cityName{
-    width: 100%;
-    font-size: 1.3rem;
-    color: #FCFCFC;
-    font-weight: 500;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.cityName {
+  width: 100%;
+  font-size: 1.3rem;
+  color: #fcfcfc;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.weatherInfo{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: #FCFCFC;
-    gap: 8vw;
+.weatherInfo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fcfcfc;
+  gap: 8vw;
 }
 
 .weatherInfo .temprature {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 7rem;
-    color: #FCFCFC;
-    font-weight: 600;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 7rem;
+  color: #fcfcfc;
+  font-weight: 600;
 }
 
-.weather{
-    font-size:4rem;
+.weather {
+  font-size: 4rem;
 }
 
-.weatherInfo .otherInfo{
-    font-size: large;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2vh;
+.weatherInfo .otherInfo {
+  font-size: large;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
 }
 
-.humidity{
-    display: flex;
-    align-items: center;
-    gap: 9px;
+.humidity {
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
 
 .humidity-Icon {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .welcome {
-    font-size: 3rem;
-    color: #FCFCFC;
-    text-wrap: wrap;
-    font-weight: 600;
+  font-size: 3rem;
+  color: #fcfcfc;
+  text-wrap: wrap;
+  font-weight: 600;
 }
 
 /* .search {
@@ -88,48 +87,75 @@
     gap: 10px;
 } */
 
-
-
 .search-input-container {
-    width: 220px;
-    position: relative;
+  width: 220px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  transition: 0.2s linear;
+  border: 2.5px solid #fcfcfc;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid #fcfcfc;
+  box-shadow: -5px -5px 0px #d0ccc6;
+}
+
+.search-input-container:hover > .icon {
+  animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
+  }
+}
+
+@media (max-width: 662px) {
+  .weatherCard {
+    padding: 3rem;
+    min-width: 40%;
+    height: 100vh;
+    background-color: #1f2025;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    border-radius: 2.5rem;
+    z-index: 1;
+    justify-content: center;
   }
   
-  .icon {
-    position: absolute;
-    right: 10px;
-    top: calc(50% + 5px);
-    transform: translateY(calc(-50% - 5px));
-  }
-  
-  .input {
+  .cityName {
     width: 100%;
-    height: 20px;
-    padding: 10px;
-    transition: .2s linear;
-    border: 2.5px solid #FCFCFC;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 1.3rem;
+    color: #fcfcfc;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
-  
-  .input:focus {
-    outline: none;
-    border: 0.5px solid #FCFCFC;
-    box-shadow: -5px -5px 0px #D0CCC6;
-  }
-  
-  .search-input-container:hover > .icon {
-    animation: anim 1s linear infinite;
-  }
-  
-  @keyframes anim {
-    0%,
-    100% {
-      transform: translateY(calc(-50% - 5px)) scale(1);
-    }
-  
-    50% {
-      transform: translateY(calc(-50% - 5px)) scale(1.1);
-    }
-  }
+
+
+}
