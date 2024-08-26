@@ -4,7 +4,8 @@ import { IoWaterOutline } from "react-icons/io5";
 function App() {
   const [city, setCity] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
-  console.log(weatherData);
+  const [error, setError] = useState(false);
+  // console.log(weatherData);
 
   const date = new Date();
   const day = date.getDate();
@@ -18,14 +19,19 @@ function App() {
       }&units=metric`
     );
     const res = await data.json();
-    setWeatherData(res);
-  };
 
+    if (res.cod == "404") {
+      setError(true);
+    } else {
+      setError(false);
+      setWeatherData(res);
+    }
+  };
 
   function getGreeting() {
     const now = new Date();
     const hour = now.getHours();
-  
+
     if (hour >= 5 && hour < 12) {
       return "Good morning!";
     } else if (hour >= 12 && hour < 17) {
@@ -46,24 +52,32 @@ function App() {
         </div>
         <div className="weatherInfo">
           <div className="temprature">
-          {Math.round(weatherData?.main.temp) || "--"}&deg;<div className="weather">{weatherData?.weather[0].main || "--"}</div>
+            {Math.round(weatherData?.main.temp) || "--"}&deg;
+            <div className="weather">
+              {weatherData?.weather[0].main || "--"}
+            </div>
           </div>
           <div className="otherInfo">
-            <div className="max">Max {weatherData?.main.temp_max || "--"}&deg;C</div>
-            <div className="min">Min {weatherData?.main.temp_min || "--"}&deg;C</div>
+            <div className="max">
+              Max {weatherData?.main.temp_max || "--"}&deg;C
+            </div>
+            <div className="min">
+              Min {weatherData?.main.temp_min || "--"}&deg;C
+            </div>
             <div className="humidity">
-              <IoWaterOutline className="humidity-Icon" /> {weatherData?.main.humidity || "--"}%
+              <IoWaterOutline className="humidity-Icon" />{" "}
+              {weatherData?.main.humidity || "--"}%
             </div>
           </div>
         </div>
-        <div className="welcome">{getGreeting()}</div>
+        <div className="welcome">{error? "enter valid city" :getGreeting()}</div>
 
         <div className="search-input-container">
           <input
             type="text"
             name="text"
             className="input"
-            placeholder="Enter City..."
+            placeholder={error ? "Enter Valid City" : "Enter City Name"}
             onChange={(e) => setCity(e.target.value)}
             onKeyDown={(e) => {
               e.key == "Enter" ? fetchData() : "";

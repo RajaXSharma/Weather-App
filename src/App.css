@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d1d1d1;
+    background-color: #0B0D0F;
 
 }
 
@@ -13,7 +13,7 @@
     padding: 3rem;
     min-width: 40%;
     height: 60vh;
-    background-color: #f4f4f4;
+    background-color: #1F2025;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,6 +26,7 @@
 .cityName{
     width: 100%;
     font-size: 1.3rem;
+    color: #FCFCFC;
     font-weight: 500;
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +38,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    color: #696969;
+    color: #FCFCFC;
     gap: 8vw;
 }
 
@@ -46,7 +47,7 @@
     align-items: center;
     flex-direction: column;
     font-size: 7rem;
-    color: #696969;
+    color: #FCFCFC;
     font-weight: 600;
 }
 
@@ -75,7 +76,7 @@
 
 .welcome {
     font-size: 3rem;
-    color: #696969;
+    color: #FCFCFC;
     text-wrap: wrap;
     font-weight: 600;
 }
@@ -106,7 +107,7 @@
     height: 20px;
     padding: 10px;
     transition: .2s linear;
-    border: 2.5px solid #696969;
+    border: 2.5px solid #FCFCFC;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -114,8 +115,8 @@
   
   .input:focus {
     outline: none;
-    border: 0.5px solid #696969;
-    box-shadow: -5px -5px 0px #696969;
+    border: 0.5px solid #FCFCFC;
+    box-shadow: -5px -5px 0px #D0CCC6;
   }
   
   .search-input-container:hover > .icon {
