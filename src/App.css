@@ -132,16 +132,28 @@
 }
 
 @media (max-width: 662px) {
+
+  .container {
+  font-family: "Roboto", sans-serif;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b0d0f;
+}
+
+
   .weatherCard {
     padding: 3rem;
-    min-width: 40%;
-    height: 100vh;
+    min-width: auto ;
+    height: 90vh;
     background-color: #1f2025;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5rem;
-    border-radius: 2.5rem;
+    border-radius: 0;
     z-index: 1;
     justify-content: center;
   }
